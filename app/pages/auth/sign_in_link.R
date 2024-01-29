@@ -12,9 +12,10 @@ function(email) {
   <<header()>>
   <body>
     <button id="sign_out" class="btn btn-default" style="background-color: #FFF; position: absolute; top: 5px; right: 15px;"><i class="fa fa-sign-out" style="margin-right: 5px;"></i>Sign Out</button>
-    <div style="display: flex; align-items: center; flex-direction: column; margin-top: 50px;">
-      <img src="/assets/images/ech_logo.png" style="width: 230px; padding: 0 15px;"/>
-      <h1 style="font-size: 40px; margin-bottom: 0;">App Name</h1>
+    <div style="display: flex; align-items: center; flex-direction: column; margin-top: 75px;">
+      <img src="/assets/images/logo.png" style="width: 230px; padding: 0 15px;"/>
+      <br/>
+      <br/>
       <br/>
       <div style="width: 100%; max-width: 600px; display: flex; align-items: center; flex-direction: column; background-color: #FFF; border-radius: 20px; padding: 30px;">
         <h2 style="text-align: center; line-height: 1.7;">Sign in link sent to <<email>>.</h2>

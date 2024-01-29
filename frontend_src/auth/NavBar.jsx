@@ -50,7 +50,7 @@ function NavBar(props) {
         <i className="fa-solid fa-bars" style="font-size: 20px;"></i>
       </div>
       <div style={{width: `100%`, display: `flex`, justifyContent: `center`}}>
-        <img alt="ECH Logo" height="50" src="/assets/images/ech_logo.png" style="padding: 7.5px; margin-left: 12px;" />
+        <img alt="ECH Logo" height="50" src="/assets/images/logo_horizontal.png" style="padding: 7.5px; margin-left: 12px;" />
       </div>
       <div style="white-space: nowrap; font-size: 24px; font-weight: 600; margin-top: 8px; margin-left: 60px; color: var(--color_danger)">
         Admin

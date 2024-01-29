@@ -9,10 +9,10 @@ glue('
 <html lang="en">
 {header()}
 <body>
-  <div style="display: flex; align-items: center; flex-direction: column; margin-top: 50px;">
-    <h1 style="font-size: 40px; margin-bottom: 0;">App Name</h1>
+  <div style="display: flex; align-items: center; flex-direction: column; margin-top: 75px;">
+    <img src="/assets/images/logo.png" style="width: 250px; padding: 0 15px;"/>
+    <br/>
     <div style="background-color: #FFF; padding: 30px; border-radius: 15px; margin-top: 40px;">
-      
       <div style="width: 250px;">
         <h1 style="text-align: center; margin: 0;">Sign In</h1>
       </div>

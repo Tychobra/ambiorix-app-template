@@ -255,7 +255,7 @@ send_sign_in_link <- function(email, verification_code, user_uid) {
       subject = "Sign In Link",
       html = glue::glue(
         "<div style='align-items: center; padding: 20px; background-color: #EEE; text-align: center;'>
-          <img src='{Sys.getenv('APP_URL')}/ech/images/ech_logo.png' width='150px' style='display: block; margin: 0 auto;'/>
+          <img src='{Sys.getenv('APP_URL')}/ech/images/logo.png' width='150px' style='display: block; margin: 0 auto;'/>
           <div style='padding: 30px; width: 100%; max-width: 600px; background-color: #FFF; margin: 20px auto;'>
             <a href='{Sys.getenv('APP_URL')}/auth/verify-email?verification_code={verification_code}&user_uid={user_uid}'>Click to Sign In</a>
           </div>
