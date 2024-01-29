@@ -1,6 +1,7 @@
 # Ambiorix Web App Template
 
-A starter template for building web apps with an R Ambiorix backend and Solidjs frontend.
+A starter template for building web apps with an R Ambiorix backend, Postgres Database, 
+and Solidjs frontend.
 
 ### Install JS Dependencies
 
@@ -9,6 +10,10 @@ npm install
 cd frontend_src && npm install
 cd ..
 ```
+
+### Configure Database and Mailgun Credentials
+
+Update the "/app/.env.development" file with your database and mailgun credentials.
 
 ### Run Locally for Development
 
