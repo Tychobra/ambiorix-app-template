@@ -5,5 +5,4 @@ node_modules
 .Rproj.user
 *.Rproj
 
-.env.development
 .env.production
