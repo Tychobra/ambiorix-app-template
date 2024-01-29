@@ -18,7 +18,6 @@ options(
 
 parse_cookies <- function(x) {
   parts <- strsplit(x, ";", fixed = TRUE)[[1]]
-  
   out <- list()  
   for (ck in parts) {
     hold <- strsplit(ck, "=", fixed = TRUE)[[1]]
@@ -54,11 +53,18 @@ db_conn <- dbPool(
 
 app <- Ambiorix$new(
   host = "0.0.0.0", 
-  port = 8080L
+  port = 8080L,
+  log = TRUE
 )
 
 app$use(\(req, res) {
-  req$cookies <- parse_cookies(req$HTTP_COOKIE)
+  
+  if (is.null(req$HTTP_COOKIE)) {
+    req$cookies <- list()
+  } else {
+    req$cookies <- parse_cookies(req$HTTP_COOKIE)
+  }
+  
   return(NULL)
 })
 
@@ -116,8 +122,7 @@ app$use(\(req, res) {
 
 app$static("./assets", "assets")
 app$get("/favicon.ico", \(req, res) {
-  res$status <- 204L # no content
-  res$send("")
+  res$send_file("./assets/images/icon.png")
 })
 
 index_page <- source("./pages/index.R", local = TRUE)$value
@@ -136,7 +141,9 @@ app$get("/sign-in", \(req, res) {
       return(res$redirect("/sign-in-link", status = 303L))
     }
   }
-  
+  print(list(
+    "I made it here"
+  ))
   res$send(sign_in_page)
 })
 
