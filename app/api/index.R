@@ -2,10 +2,9 @@
 
 ### Custom App Endpoints --------------------------------------------------------------------
 
-#' @get /data
-#'
-#'
-function(req, res) {
+api_router <- Router$new()
+
+api_router$get("/data", \(req, res) {
   
   if (is.null(req$user)) {
     res$status <- 401L
@@ -34,10 +33,10 @@ function(req, res) {
 
 
   if (is.null(err_out)) {
-    return(out)
+    return(res$json(out))
   } else {
-    return(list(
+    return(res$json(list(
       message = unbox(err_out)
-    ))
+    )))
   }
-}
+})
