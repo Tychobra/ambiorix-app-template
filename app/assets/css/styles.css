@@ -1,0 +1,396 @@
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  /* ECH colors */
+  --color_primary: #6ec066;
+  --color_light: #f3f5f9;
+  --color_dark: #19394a;
+  
+  /* Other colors */
+  --color_light_2: #adb8c6;
+  --color_light_3: #f1f1f1;
+  --color_danger: #dc3545;
+  --color_warning: #ffc107;
+  --color_success: #19af69;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color_light);
+}
+
+
+a, a:hover, a:active, a:visited, a:focus {
+  text-decoration:none;
+  color: #000;
+}
+
+hr {
+  height: 1px;
+  background-color: var(--color_light_2);
+  border: none;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+
+/* Main Layout Styles */
+
+
+
+.main_content {
+  padding: 0; 
+  margin-left: 230px; 
+  padding-top: 50px;
+  transition: margin 300ms ease-in-out;
+  max-width: calc(100% - 70px);
+}
+
+
+
+.main_content_open {
+  margin-left: 70px;
+}
+
+
+
+.npt {
+  width: 100%; 
+  padding: 10px; 
+  border-radius: 4px; 
+  border: 1px solid var(--color_light_2); 
+  box-sizing: border-box;
+}
+
+.npt:focus {
+  outline: none;
+  border: 1px solid var(--color_dark);
+}
+
+.npt_btn {
+  width: calc(100% - 65px); 
+  padding: 10px; 
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px; 
+  border: 1px solid var(--color_light_2); 
+  box-sizing: border-box
+}
+
+
+
+.npt_btn:focus {
+  outline: none;
+  border: 1px solid var(--color_dark);
+}
+
+.npt_select {
+  width: 100%; 
+  padding: 9px 7px; 
+  border-radius: 4px; 
+  border: 1px solid var(--color_light_2); 
+  box-sizing: border-box;
+}
+
+.npt_select:focus {
+  outline: none;
+  border: 1px solid var(--color_dark);
+}
+
+label {
+  padding-left: 8px;
+  text-align: left;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+}
+
+.btn-sm {
+  padding: 5px 8px;
+}
+
+.btn-lg {
+  padding: 15px;
+}
+
+.btn-white {
+  background-color: #FFF;
+  border: 1px solid #CCC;
+}
+
+.btn-white:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-default {
+  background-color: var(--color_light);
+  border: 1px solid var(--color_light_2);
+}
+
+.btn-default:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: var(--color_dark);
+  color: var(--color_light);
+  border: 1px solid var(--color_dark);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-danger {
+  background-color: var(--color_danger);
+  color: var(--color_light);
+  border: 1px solid var(--color_danger);
+}
+
+.btn-danger:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.hidden {
+  display: none;
+}
+
+.dropdown-content {
+  position: absolute;
+  background-color: #FFF;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 50;
+}
+
+
+
+.cell {
+  padding: 7px;
+  border-left: 1px solid var(--color_light);
+  border-right: 1px solid var(--color_light);
+}
+
+.cell_sm {
+  padding: 5px;
+  font-size: 12px;
+}
+
+.row {
+  border-bottom: 1px solid var(--color_light);
+}
+
+/* for alternating striped rows*/
+.row:nth-child(2n - 1) {
+  background-color: var(--color_light_3);
+}
+
+
+.modal {
+  position: fixed;
+  z-index: 1002; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4)
+}
+
+.panel {
+  background-color: #FFF;
+  width: 300px;
+  box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.1);
+  margin: 125px auto 0 auto;
+  z-index: 1003; 
+}
+
+.panel_md {
+  background-color: #FFF;
+  width: 700px;
+  box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 125px auto 0 auto;
+  z-index: 1003; 
+}
+
+.panel_lg {
+  background-color: #FFF;
+  width: 800px;
+  box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 125px auto 0 auto;
+  z-index: 1003;
+}
+
+.panel_xl {
+  background-color: #FFF;
+  width: 1000px;
+  box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 75px auto 0 auto;
+  z-index: 1003;
+}
+
+.panel_header {
+  padding: 0 15px;
+  border-bottom: 1px solid var(--color_dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel_content {
+  padding: 15px;
+}
+
+
+
+/**
+ * Tooltip Styles
+ */
+
+ .tooltip {
+  /* position: relative; making the .tooltip span a container for the tooltip text */
+  z-index: 1000;
+}
+
+.tooltip:before {
+  content: attr(data-tooltip); /* here's the magic */
+  position: absolute;
+  pointer-events: none;
+  /* vertically center on top of element */
+  transform: translate(-15%, -110%);
+  
+  /* basic styles */
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--color_dark);
+  color: var(--color_light);
+  text-align: center;
+  z-index: 999999999;
+  white-space: wrap;
+  display: none; /* hide by default */
+  max-width: 200px;
+  line-height: 1.5
+}
+
+.tooltip:hover:before {
+  display: block;
+}
+
+.tooltip.top:before {
+  transform: translate(-0%, -160%);
+  margin-left: 5px; /*and add a small left margin */
+}
+
+.tooltip.right:before {
+  transform: translate(50%, -25%);
+  margin-left: 5px; /*and add a small left margin */
+}
+
+
+.tooltip.bottom:before {
+  transform: translate(0, 15px);
+  margin-left: 5px; /*and add a small left margin */
+}
+
+#drop_zone {
+  border: 2px dashed var(--color_dark); 
+  width: calc(100% - 75px); 
+  padding: 25px;
+  margin: 10px; 
+  text-align: center;
+  cursor: pointer;
+}
+
+#drop_zone:hover {
+  border: 2px solid var(--color_dark); 
+  background-color: var(--color_light_3);
+}
+
+
+.custom.solid-select-container {
+  color: #000;
+}
+
+.custom .solid-select-input {
+  font-size: 14px;
+  padding: 2.5px;
+}
+
+.custom .solid-select-control {
+  border: 1px solid var(--color_light_2);
+}
+
+.custom .solid-select-list {
+  background: #FFF;
+  border: 1px solid var(--color_light_2);
+  overflow-y: visible;
+  z-index: 999999;
+}
+
+.custom .solid-select-option {
+  padding: 5px;
+  margin: 0;
+  font-size: 14px;
+}
+
+.custom .solid-select-single-value {
+  font-size: 14px;
+  margin-top: 3px;
+}
+
+.custom .solid-select-placeholder {
+  padding-top: 3px;
+}
+
+.danger_border > .solid-select-control {
+  border: 1px solid var(--color_danger);
+}
+
+/*.custom .solid-select-option:hover {
+  background-color: #fa7f25;
+  color: #fff;
+}
+.custom .solid-select-option[data-focused=true] {
+  border: 1px solid var(--color_dark);
+}*/
+
+.air-datepicker-global-container {
+  z-index: 999999;
+}
+
+.error_text {
+  position: absolute; 
+  font-size: 11px; 
+  color: var(--color_danger); 
+  bottom: -14px; 
+  left: 5px;
+}
+

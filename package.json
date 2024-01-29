@@ -1,0 +1,24 @@
+{
+  "name": "ech_rater",
+  "version": "1.0.0",
+  "description": "Prcing Dashboard for Employers for Cheaper Hleathcare (ECH)",
+  "main": "esbuild_dev.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "node ./esbuild_dev.js && cd \"./app\" && Rscript \"./server.R\"",
+    "build": "node ./esbuild_dev.js",
+    "prod": "node ./esbuild_prod.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "solid-js": "^1.8.5"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.5",
+    "esbuild-plugin-solid": "^0.5.0"
+  }
+}

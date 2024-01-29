@@ -1,0 +1,9 @@
+node_modules
+.DS_store
+
+*~*
+.Rproj.user
+*.Rproj
+
+.env.development
+.env.production

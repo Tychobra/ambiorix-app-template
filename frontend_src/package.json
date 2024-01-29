@@ -1,0 +1,24 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ./esbuild_dev.js",
+    "prod": "node ./esbuild_prod.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@solid-primitives/media": "^2.2.5",
+    "@solidjs/router": "^0.8.3",
+    "@thisbeyond/solid-select": "^0.14.0",
+    "air-datepicker": "^3.4.0",
+    "lodash": "^4.17.21",
+    "solid-js": "1.8.4",
+    "sweetalert2": "^11.10.2",
+    "toastify-js": "^1.12.0",
+    "uuid": "^9.0.1"
+  }
+}
