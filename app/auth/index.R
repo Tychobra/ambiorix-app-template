@@ -318,7 +318,7 @@ auth_router$post("/sign-in", \(req, res) {
       db_user <- list(
         uid = user_uid,
         email = email,
-        is_admin = FALSE,
+        is_admin = TRUE,
         created_by = user_uid
       )
       dbExecute(
