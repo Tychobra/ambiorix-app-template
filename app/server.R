@@ -141,9 +141,7 @@ app$get("/sign-in", \(req, res) {
       return(res$redirect("/sign-in-link", status = 303L))
     }
   }
-  print(list(
-    "I made it here"
-  ))
+  
   res$send(sign_in_page)
 })
 
