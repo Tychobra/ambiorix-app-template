@@ -308,9 +308,24 @@ auth_router$post("/sign-in", \(req, res) {
       )
     )
     
-    if (!identical(nrow(db_user), 1L)) {
-      status_out <- 400
-      stop("user not found", call. = FALSE)
+    #if (!identical(nrow(db_user), 1L)) {
+    #  status_out <- 400
+    #  stop("user not found", call. = FALSE)
+    #}
+    if (identical(nrow(db_user), 0L)) {
+      # user does not exist yet, so create them
+      user_uid <- UUIDgenerate()
+      db_user <- list(
+        uid = user_uid,
+        email = email,
+        is_admin = FALSE,
+        created_by = user_uid
+      )
+      dbExecute(
+        conn,
+        "INSERT INTO auth.users (uid, email, is_admin, created_by) VALUES ($1, $2, $3, $4)",
+        params = unname(db_user)
+      )
     }
     
 
