@@ -390,26 +390,31 @@ const App = () => {
                 <Show
                    when={filtered_users().length > 10}
                 >
-                <div style="width: 100%; display: flex; justify-content: end; margin-top: 5px;">
-                  <button 
-                    onClick={() => set_table_page(table_page() - 1)}
-                    class="btn-sm btn-default" 
-                    style="width: 50px;"
-                    disabled={table_page() === 1}
-                  >
-                    <i class="fa fa-chevron-left"></i>
-                  </button>
-        
-                  <div class="btn-sm">{table_page()}</div>
-                  <button 
-                    onClick={() => set_table_page(table_page() + 1)}
-                    class="btn-sm btn-default" 
-                    style="width: 50px;"
-                    disabled={table_page() * 10 >= filtered_users().length}
-                  >
-                    <i class="fa fa-chevron-right"></i>
-                  </button>
-                </div> 
+                  <div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+                    <div style="padding-left: 5px; width: 150px; margin-top: 5px;">
+                      {(table_page() - 1) * 10 + 1} - {Math.min(table_page() * 10, filtered_users().length)} of {filtered_users().length} users
+                    </div>
+                    <div style="width: 100%; display: flex; justify-content: end; margin-top: 5px;">
+                      <button 
+                        onClick={() => set_table_page(table_page() - 1)}
+                        class="btn-sm btn-default" 
+                        style="width: 50px;"
+                        disabled={table_page() === 1}
+                      >
+                        <i class="fa fa-chevron-left"></i>
+                      </button>
+            
+                      <div class="btn-sm">{table_page()}</div>
+                      <button 
+                        onClick={() => set_table_page(table_page() + 1)}
+                        class="btn-sm btn-default" 
+                        style="width: 50px;"
+                        disabled={table_page() * 10 >= filtered_users().length}
+                      >
+                        <i class="fa fa-chevron-right"></i>
+                      </button>
+                    </div>
+                  </div> 
                 </Show>
               </div>
               <br/>
