@@ -57,7 +57,7 @@ export const set_polished_cookie = () => {
 * convert JSON formatted as an R data frame to JSON formatted as a JS data frame.
 */
 export const r_df_to_js = (r_df) => {
-  debugger
+  
   const cols = Object.keys(r_df)
 
   let out = []
