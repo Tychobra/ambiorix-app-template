@@ -57,11 +57,6 @@ app <- Ambiorix$new(
   port = 8080L
 )
 
-app$get("/favicon.ico", \(req, res) {
-  #res$status <- 404
-  res$send(NULL)
-})
-
 app$use(\(req, res) {
   req$cookies <- parse_cookies(req$HTTP_COOKIE)
   return(NULL)
@@ -120,6 +115,10 @@ app$use(\(req, res) {
 
 
 app$static("./assets", "assets")
+app$get("/favicon.ico", \(req, res) {
+  res$status <- 204L # no content
+  res$send("")
+})
 
 index_page <- source("./pages/index.R", local = TRUE)$value
 sign_in_page <- source("./pages/auth/sign_in.R", local = TRUE)$value
