@@ -79,7 +79,6 @@ app$use(\(req, res) {
   if (is.null(polished_cookie)) {
     # cookie not set, so forward, but without setting user.
     # user will only be able to access public routes
-    #forward()
     return(NULL)
   }
   
@@ -104,7 +103,6 @@ app$use(\(req, res) {
       }
     }
 
-    #forward()
     return(NULL)
 
   }, error = function(err) {
@@ -122,10 +120,6 @@ app$use(\(req, res) {
 
 
 app$static("./assets", "assets")
-
-source("auth/index.R", local = TRUE)
-app$use(auth_router)
-
 
 index_page <- source("./pages/index.R", local = TRUE)$value
 sign_in_page <- source("./pages/auth/sign_in.R", local = TRUE)$value
@@ -194,5 +188,7 @@ app$get("/admin", \(req, res) {
   res$send(admin_page(req$user))
 })
 
+source("auth/index.R", local = TRUE)
+app$use(auth_router)
 
 app$start(open = FALSE)

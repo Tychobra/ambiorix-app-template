@@ -7,6 +7,14 @@
 #'
 function(req, res) {
   
+  if (is.null(req$user)) {
+    res$status <- 401L
+    res$json(list(
+      message = "unauthorized"
+    ))
+    return(NULL)
+  }
+
   out <- NULL
   err_out <- NULL
   tryCatch({

@@ -4,10 +4,18 @@ auth_router <- Router$new("/auth")
 
 auth_router$get("/users", \(req, res) {
   
+  if (is.null(req$user)) {
+    res$status <- 401L
+    res$json(list(
+      message = "unauthorized"
+    ))
+    return(NULL)
+  }
+
   err_out <- NULL
   status_out <- 200L
-  tryCatch({
-    
+  tryCatch({   
+
     user_uid <- req$query$user_uid
 
     hold <- db_conn %>%
@@ -43,6 +51,14 @@ auth_router$get("/users", \(req, res) {
 
 auth_router$post("/users", \(req, res) {
   
+  if (is.null(req$user) || !req$user$is_admin) {
+    res$status <- 401L
+    res$json(list(
+      message = "unauthorized"
+    ))
+    return(NULL)
+  }
+
   out <- NULL
   err_out <- NULL
   status_out <- 200L  
@@ -101,6 +117,14 @@ auth_router$post("/users", \(req, res) {
 
 auth_router$put("/users", \(req, res) {
   
+  if (is.null(req$user) || !req$user$is_admin) {
+    res$status <- 401L
+    res$json(list(
+      message = "unauthorized"
+    ))
+    return(NULL)
+  }
+
   out <- NULL
   err_out <- NULL
   status_out <- 200L
@@ -163,6 +187,14 @@ auth_router$put("/users", \(req, res) {
 
 auth_router$delete("/users?user_uid", \(req, res) {
   
+  if (is.null(req$user) || !req$user$is_admin) {
+    res$status <- 401L
+    res$json(list(
+      message = "unauthorized"
+    ))
+    return(NULL)
+  }
+
   err_out <- NULL
   status_out <- 200L
   tryCatch({
@@ -354,6 +386,14 @@ auth_router$post("/sign-in", \(req, res) {
 
 auth_router$post("/sign-out", \(req, res) {
   
+  if (is.null(req$user)) {
+    res$status <- 401L
+    res$json(list(
+      message = "unauthorized"
+    ))
+    return(NULL)
+  }
+
   status_out <- 200L
   err_out <- NULL
   tryCatch({
@@ -418,6 +458,14 @@ auth_router$post("/sign-out", \(req, res) {
 
 auth_router$post("/send-verification-email", \(req, res) {
   
+  if (is.null(req$user)) {
+    res$status <- 401L
+    res$json(list(
+      message = "unauthorized"
+    ))
+    return(NULL)
+  }
+
   status_out <- 200L
   err_out <- NULL
   tryCatch({
