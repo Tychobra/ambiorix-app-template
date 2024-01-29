@@ -174,19 +174,17 @@ app$get("/", \(req, res) {
 })
 
 app$get("/admin", \(req, res) {
+  
   if (is.null(req$user)) {
-    res$redirect("/sign-in", status = 303L)
-    return(NULL)
+    return(res$redirect("/sign-in", status = 303L))
   }
   
   if (!isTRUE(req$user$is_verified)) {
-    res$redirect("/sign-in-link", status = 303L)
-    return(NULL)
+    return(res$redirect("/sign-in-link", status = 303L))
   }
 
   if (!isTRUE(req$user$is_admin)) {
-    res$redirect("/", status = 303L)
-    return(NULL)
+    return(res$redirect("/", status = 303L))
   }
 
   res$send(admin_page(req$user))
