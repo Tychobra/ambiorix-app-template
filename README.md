@@ -62,8 +62,8 @@ docker run -p 8080:8080 ambiorix-app-template
 ```terminal
 
 # tag image for deployment to GCR (Google Container Registry)
-docker tag ambiorix-app-template gcr.io/polished-299417/ambiorix-app-template
+docker tag ambiorix-app-template gcr.io/postgres-db-189513/ambiorix-app-template
 
 # push tagged image to GCR
-docker push gcr.io/polished-299417/ambiorix-app-template
+docker push gcr.io/postgres-db-189513/ambiorix-app-template
 ```
