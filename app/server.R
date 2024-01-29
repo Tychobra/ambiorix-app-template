@@ -193,4 +193,8 @@ app$get("/admin", \(req, res) {
 source("auth/index.R", local = TRUE)
 app$use(auth_router)
 
+# update "api/index.R" to include your custom API endpoints
+source("api/index.R", local = TRUE)
+app$use(api_router)
+
 app$start(open = FALSE)

@@ -2,7 +2,7 @@
 
 ### Custom App Endpoints --------------------------------------------------------------------
 
-api_router <- Router$new()
+api_router <- Router$new("/api")
 
 api_router$get("/data", \(req, res) {
   
@@ -18,7 +18,7 @@ api_router$get("/data", \(req, res) {
   err_out <- NULL
   tryCatch({
     
-    out <- list(message  = "hi")
+    out <- list(message  = unbox("hi"))
 
   }, error = function(err) {
 
