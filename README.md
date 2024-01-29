@@ -1,4 +1,4 @@
-# Ambiorix Plumber Web App Template
+# Ambiorix Web App Template
 
 A starter template for building web apps with an R Ambiorix backend and Solidjs frontend.
 
