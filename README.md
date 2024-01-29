@@ -7,6 +7,9 @@ This starter app comes with email link authentication.  Users can sign up or log
 and a link will be sent to their email address to authenticate them.  This method of authentication
 does not require a password.  We use [Mailgun](https://www.mailgun.com/) to send the emails.
 
+The app comes with an admin panel for managing users.  The admin panel can be extended to handle any
+other admin tasks.
+
 ### Install JS Dependencies
 
 ```terminal
